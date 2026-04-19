@@ -1,0 +1,30 @@
+class MyClass:
+    def __init__(self):
+        self._value = 42  # Private attribute
+
+    @property
+    def value(self):
+        print("Getting the value")
+        return self._value
+
+    @value.setter
+    def value(self, new_value):
+        print("Setting the value")
+        self._value = new_value
+
+    @value.deleter
+    def value(self):
+        print("Deleting the value")
+        del self._value
+
+# Creating an instance of the class
+obj = MyClass()
+
+# Accessing the property-like method
+print(obj.value)  # This calls the getter method
+
+# Setting the value using the setter method
+obj.value = 100
+
+# Deleting the value using the deleter method
+del obj.value
