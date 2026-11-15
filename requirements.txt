@@ -1,0 +1,25 @@
+requests == 2.32.5
+ipykernel == 7.2.0
+pandas == 2.3.3
+matplotlib == 3.10.8
+jupyter == 1.1.1
+seaborn == 0.13.2
+scikit-learn == 1.7.2
+openpyxl == 3.1.5
+tabulate == 0.9.0
+nltk == 3.9.3
+
+# --- BigQuery access for the PRISM comparable-selection notebooks ---
+# prism_comparable_engine_bq.ipynb reads ar_rep_Empirical_Prod directly.
+# db-dtypes and pyarrow are required by .to_dataframe(): without them the
+# BigQuery DATE / NUMERIC columns cannot be converted to pandas.
+google-cloud-bigquery == 3.38.0
+google-cloud-bigquery-storage == 2.33.1
+db-dtypes == 1.4.3
+pyarrow == 21.0.0
+# google-api-core is held at 2.25.1 because 2.35+ requires requests>=2.33,
+# which would break the requests==2.32.5 pin above.
+google-api-core == 2.25.1
+google-cloud-core == 2.4.3
+# Hedonic regression with HC3 robust standard errors (ar-prism-poc method).
+statsmodels == 0.15.0
